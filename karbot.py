@@ -47,6 +47,9 @@ class bot(ch.RoomManager):
                 used_prefix= False
         else:
             return
+        
+        if used_prefix and cmd=="cmds":
+            room.message("Commands: say, anc, shutup, addmod, mods (WIP), slap, db.")
 
         if used_prefix and cmd=="lvl":               
             if self.getAccess(user) > 9000:
@@ -123,7 +126,7 @@ class bot(ch.RoomManager):
             else:
                 room.message("You do not have the required permission to execute this command.")
 
-rooms = ["your group"] #set "your group" to the name of your group on chatango
+rooms = ["vegetafanclub"] #set "your group" to the name of your group on chatango
 
 if __name__ == "__main__":
-    bot.easy_start(rooms, "username", "password") #the sign-in information for your bot's account
+    bot.easy_start(rooms, "kmath", "spr1te") #the sign-in information for your bot's account
